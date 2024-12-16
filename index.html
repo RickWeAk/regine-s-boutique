@@ -12,27 +12,42 @@
     <!-- Navigation Bar -->
     <nav class="bg-gray-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold">Regine's  Boutique</a>
-            <div class="space-x-6">
+            <a href="#" class="text-3xl font-bold">Regine's Boutique</a>
+            <div class="hidden md:flex space-x-6">
                 <a href="#home" class="hover:text-gray-300">Home</a>
                 <a href="#products" class="hover:text-gray-300">Products</a>
                 <a href="#contact" class="hover:text-gray-300">Contact</a>
             </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button @click="open = !open" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-data="{ open: false }" :class="{'block': open, 'hidden': !open}" class="md:hidden bg-gray-800 text-white space-y-4 px-4 py-4">
+            <a href="#home" class="block hover:text-gray-300">Home</a>
+            <a href="#products" class="block hover:text-gray-300">Products</a>
+            <a href="#contact" class="block hover:text-gray-300">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="text-center bg-blue-500 text-white py-16">
-        <div class="container mx-auto">
-            <h1 class="text-5xl font-bold mb-4">Welcome to Regine's  Boutique</h1>
-            <p class="text-xl mb-8">Shop the latest fashion trends and elevate your style</p>
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Welcome to Regine's Boutique</h1>
+            <p class="text-lg sm:text-xl mb-8">Shop the latest fashion trends and elevate your style</p>
             <a href="#products" class="bg-yellow-500 text-gray-800 py-2 px-6 rounded-lg hover:bg-yellow-400">Shop Now</a>
         </div>
     </section>
 
     <!-- Product Section -->
     <section id="products" class="py-16 bg-gray-100">
-        <div class="container mx-auto text-center">
+        <div class="container mx-auto text-center px-4">
             <h2 class="text-3xl font-bold mb-8">Our Latest Collection</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
@@ -89,7 +104,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="bg-blue-500 text-white py-16">
-        <div class="container mx-auto text-center">
+        <div class="container mx-auto text-center px-4">
             <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
             <form action="#" method="POST" class="max-w-lg mx-auto">
                 <input type="text" name="name" placeholder="Your Name" class="w-full p-3 mb-4 rounded-lg text-gray-700">
@@ -103,7 +118,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 DressUp Boutique. All rights reserved.</p>
+            <p>&copy; 2024 regine's Boutique. All rights reserved.</p>
         </div>
     </footer>
 
